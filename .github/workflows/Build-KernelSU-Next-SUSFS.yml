@@ -38,6 +38,11 @@ jobs:
           remove-haskell: 'true'
           remove-codeql: 'true'
 
+      - name: Configure Git
+        run: |
+         git config --global user.name "github-actions[bot]"
+         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+         
       - name: Install dependencies
         run: |
          sudo apt update && sudo apt upgrade -y
