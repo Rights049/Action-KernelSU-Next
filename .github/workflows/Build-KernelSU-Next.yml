@@ -5,15 +5,15 @@ on:
       CPU:
         description: "分支"
         required: true
-        default: 'sm7675'
+        default: 'sm8550'
       FEIL:
         description: "配置文件"
         required: true
-        default: 'oneplus_ace_3v_v'
+        default: 'oneplus_11_v'
       CPUD:
         description: "处理器代号"
         required: true
-        default: 'pineapple'
+        default: 'Kailua'
 
 jobs:
   build:
@@ -25,11 +25,6 @@ jobs:
        
      - name: Cleanup
        uses: rokibhasansagar/slimhub_actions@main
-
-     - name: Configure Git
-       run: |
-        git config --global user.name "wuua"
-        git config --global user.email "3436678798@qq.com"
 
      - name: Clean up disk space
        run: |
