@@ -1,5 +1,5 @@
 
-name: Build KernelSU Next
+name: Build KernelSU Next Origin
 on:
   workflow_dispatch:
     inputs:
