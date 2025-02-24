@@ -1,9 +1,9 @@
-name: Build Kernel Next-SUSFS For OnePlus12
+name: Build KernelSU Next SUSFS 12R
 on:
   workflow_dispatch:
     inputs:
       CPU:
-        description: "处理器分支"
+        description: "分支"
         required: true
         default: 'sm8650'
       FEIL:
@@ -22,10 +22,7 @@ on:
         description: "内核版本"
         required: true
         default: '6.1'
-      SUSFS_VERSION:
-        description: "SUSFS 版本"
-        required: true
-        default: 'v1.5.5'   
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -115,3 +112,9 @@ jobs:
         with:
          name: AnyKernel3_KernelSU_Next_${{ env.KSUVER }}_${{ github.event.inputs.FEIL }}
          path: ./AnyKernel3/*
+
+      - name: Upload Image
+        uses: actions/upload-artifact@v4
+        with:
+         name: Image_KernelSU_Next_${{ env.KSUVER }}_${{ github.event.inputs.FEIL }}
+         path: kernel_workspace/kernel_platform/out/msm-kernel-${{ github.event.inputs.CPUD }}-gki/dist/Image
