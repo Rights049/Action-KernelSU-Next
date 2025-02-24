@@ -1,4 +1,4 @@
-name: Build KernelSU Next SUSFS 12R
+name: Build KernelSU Next SUSFS
 on:
   workflow_dispatch:
     inputs:
